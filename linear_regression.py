@@ -7,7 +7,7 @@ between all the points and their distance to the line. The most common approach 
 squares method.
 
 This script will use linear regression on an ecommerce dataset from a clothing company to determine 
-if the company should focus their development effors on a mobile app or website to generate sales.
+if they should focus their development effors on a mobile app or website to generate sales.
 '''
 
 import pandas as pd
@@ -18,7 +18,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 
-class LR:
+class LinearRegressor:
     def __init__(self) -> None:
         self.data = pd.read_csv('./data/ecommerce_data.csv')
         self.model = None
@@ -64,23 +64,22 @@ class LR:
         y = self.data[['Yearly Amount Spent']]  # the label we want to predict
 
         # Split data into training and testing subsets
-        # test_size = 30%
         X_train, self.X_test, y_train, self.y_test = train_test_split(X, y, test_size=0.3, 
                                                                       random_state=101)
 
         # Train the model
         self.model = LinearRegression()
-        self.model.fit(X_train, y_train)  # train
+        self.model.fit(X_train, y_train)
 
         # Model metrics
         print(f'Linear Regression Coefficients: {self.model.coef_}')  # coefficients for each feature
-        print(f'Linear Regression Intercept: {self.model.intercept_}')
+        print(f'Linear Regression Intercept: {self.model.intercept_}')  # intercept
 
     def eval(self):
         """
         Evaluate the model
 
-        Shows a good correlation between our actual values and predicted values from the model.
+        The model shows a good correlation between our actual values and predicted values.
         There is still some noise/error, but overall we are explaing ~99% of the variance
         """
         # Scatter plot
@@ -104,7 +103,7 @@ class LR:
         """
         Interpret the data
 
-        Given we have an accurate model, how should we interpre the data? If we analyze the 
+        Given we have an accurate model, how should we interpret the data? If we analyze the 
         coefficients of the linear fit, we can make the following conclusions:
 
         1. Every unit of increase in session length corresponds to an increase of $26 
@@ -112,9 +111,9 @@ class LR:
         3. Every unit of increase in time on website corresponds to an increase of $0.19 
         4. Every unit of increase in membership corresponds to an increase of $61 
 
-        So depending on this business, we could advise this company to either focus on app development,
-        improving the website to catch up to gains made on the app, or focus on increasing customer
-        membership time
+        So depending on this business, we could advise this company to either focus on app 
+        development, improving the website to catch up to gains made on the app, 
+        or focus on increasing customer membership time
 
         """
         cdf = pd.DataFrame(self.model.coef_.reshape(-1,1), self.X_test.columns, columns=['Coeff'])
@@ -123,7 +122,7 @@ class LR:
         print(cdf)
 
 if __name__ == '__main__':
-    lr = LR()
+    lr = LinearRegressor()
     lr.check_data()
     lr.eda()
     lr.train()
