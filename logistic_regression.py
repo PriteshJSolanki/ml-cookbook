@@ -86,7 +86,7 @@ class LogisticRegressor:
         correctly.
         """
         
-        # Classification Report
+        # Confusion Matrix and Classification Report
         predictions = self.model.predict(self.X_test)
         print(confusion_matrix(self.y_test, predictions))
         print(classification_report(self.y_test, predictions))
