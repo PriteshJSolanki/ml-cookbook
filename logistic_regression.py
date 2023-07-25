@@ -91,7 +91,7 @@ class LogisticRegressor:
         print(confusion_matrix(self.y_test, predictions))
         print(classification_report(self.y_test, predictions))
 
-    def interpret(self):
+    def test(self):
         """
         Interpret the data
 
@@ -115,4 +115,4 @@ if __name__ == '__main__':
     lr.eda()
     lr.train()
     lr.eval()
-    lr.interpret()
+    lr.test()
