@@ -274,8 +274,8 @@ class DNN:
 
 if __name__ == '__main__':
     dnn = DNN()
-    # dnn.check_data()
-    # dnn.eda()
+    dnn.check_data()
+    dnn.eda()
     dnn.preprocess()
     dnn.train()
     dnn.eval()
