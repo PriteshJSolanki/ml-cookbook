@@ -26,7 +26,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.datasets import make_blobs
 from sklearn.cluster import KMeans
-from sklearn.metrics import confusion_matrix, classification_report
 
 class KMC:
     def __init__(self) -> None:
