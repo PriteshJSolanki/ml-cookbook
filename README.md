@@ -1,4 +1,4 @@
-# ML-Cookbook
+# Machine Learning Cookbook
 A reference library of common machine learning algorithms
 
 All data  used in the python scripts can be found in the "data" folder. These datasets have been
@@ -16,6 +16,6 @@ data.
 7. Deep Neural Networks
 
 ## Installation
-python -m venv venv
-source venv activate
-pip install -r requirements.txt
+python -m venv venv  
+source venv/bin/activate  
+pip install -r requirements.txt  
