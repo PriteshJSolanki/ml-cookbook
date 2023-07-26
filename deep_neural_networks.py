@@ -2,8 +2,8 @@
 Deep Neural Networks
 
 This script will demonstrate how to build and train a multi-layer feedforward neural network
-(i.e deep neural network). The self.model will train off of a dataset from LendingClub taken from Kaggle.
-The goal of the self.model will be to predict whether or not a customer will be able to pay off a loan.
+(i.e deep neural network). The model will train off of a dataset from LendingClub taken from Kaggle.
+The goal of the model will be to predict whether or not a customer will be able to pay off a loan.
 
 '''
 import random
